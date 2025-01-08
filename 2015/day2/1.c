@@ -33,4 +33,5 @@ int main() {
   }
   printf("%d\n", ret);
   free(line);
+  free(f);
 }

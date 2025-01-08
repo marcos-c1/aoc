@@ -31,5 +31,8 @@ int main() {
   printf("%s\n", input);
   int floor = solution(input);
   printf("%d\n", floor);
+  free(input);
+  free(f);
+
   return 0;
 }
