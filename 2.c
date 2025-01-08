@@ -2,17 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 #define FILE_LENGTH 7000
+#define INFINITY 1000000
 
 int solution(char *input) {
   int sum = 0;
+  int pos = INFINITY;
   for (int i = 0; i < strlen(input); i++) {
     if (input[i] == '(') {
       sum += 1;
     } else if (input[i] == ')') {
       sum -= 1;
     }
+
+    if (sum == -1) {
+      pos = i + 1;
+      break;
+    }
   }
-  return sum;
+  if (pos == INFINITY)
+    return -99;
+  return pos;
 }
 
 int main() {
